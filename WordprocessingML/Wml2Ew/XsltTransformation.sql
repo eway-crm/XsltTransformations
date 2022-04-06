@@ -45,8 +45,8 @@ END
 DECLARE @AdminGUID UNIQUEIDENTIFIER;
 	SET @AdminGUID  = (SELECT ItemGUID FROM EWD_Users WHERE UserName = 'admin');
 
-DECLARE @ChangedTime DATETIME;
-	SET @ChangedTime = GETDATE();
+DECLARE @ChangedTime DATETIMEOFFSET;
+	SET @ChangedTime = SYSDATETIMEOFFSET();
 
 DECLARE @ObjectTypeID TINYINT;
 	SET @ObjectTypeID = dbo.GetObjectTypeID(@FolderName);
