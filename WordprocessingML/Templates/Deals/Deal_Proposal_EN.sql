@@ -21,29 +21,29 @@ DECLARE @DuplicateToOtherLanguages INT
 
 DECLARE @Definition NVARCHAR(MAX);
 	SET @Definition = N'<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:w="http://schemas.microsoft.com/office/word/2003/wordml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w10="urn:schemas-microsoft-com:office:word" xmlns:sl="http://schemas.microsoft.com/schemaLibrary/2003/core" xmlns:aml="http://schemas.microsoft.com/aml/2001/core" xmlns:wx="http://schemas.microsoft.com/office/word/2003/auxHint" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:wsp="http://schemas.microsoft.com/office/word/2003/wordml/sp2" xmlns:ns0="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas" xmlns:ns1="http://schemas.microsoft.com/office/word/2006/wordml" xmlns:ns2="urn:eway:document-schemas:export-wml-lead">
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:w="http://schemas.microsoft.com/office/word/2003/wordml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w10="urn:schemas-microsoft-com:office:word" xmlns:sl="http://schemas.microsoft.com/schemaLibrary/2003/core" xmlns:aml="http://schemas.microsoft.com/aml/2001/core" xmlns:wx="http://schemas.microsoft.com/office/word/2003/auxHint" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:wsp="http://schemas.microsoft.com/office/word/2003/wordml/sp2" xmlns:ns0="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas" xmlns:ns1="http://schemas.microsoft.com/office/word/2006/wordml" xmlns:ns2="urn:eway:document-schemas:export-wml-lead" xmlns:ns3="errors@urn:eway:document-schemas:export-wml-lead">
   <xsl:output method="xml" encoding="UTF-8" standalone="yes" />
   <xsl:template match="/">
     <xsl:processing-instruction name="mso-application">
       <xsl:text>progid="Word.Document"</xsl:text>
     </xsl:processing-instruction>
-    <w:wordDocument xmlns:w="http://schemas.microsoft.com/office/word/2003/wordml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w10="urn:schemas-microsoft-com:office:word" xmlns:sl="http://schemas.microsoft.com/schemaLibrary/2003/core" xmlns:aml="http://schemas.microsoft.com/aml/2001/core" xmlns:wx="http://schemas.microsoft.com/office/word/2003/auxHint" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:wsp="http://schemas.microsoft.com/office/word/2003/wordml/sp2" xmlns:ns0="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas" xmlns:ns1="http://schemas.microsoft.com/office/word/2006/wordml" xmlns:ns2="urn:eway:document-schemas:export-wml-lead" w:macrosPresent="no" w:embeddedObjPresent="no" w:ocxPresent="no" xml:space="preserve">
+    <w:wordDocument xmlns:w="http://schemas.microsoft.com/office/word/2003/wordml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w10="urn:schemas-microsoft-com:office:word" xmlns:sl="http://schemas.microsoft.com/schemaLibrary/2003/core" xmlns:aml="http://schemas.microsoft.com/aml/2001/core" xmlns:wx="http://schemas.microsoft.com/office/word/2003/auxHint" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:wsp="http://schemas.microsoft.com/office/word/2003/wordml/sp2" xmlns:ns0="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas" xmlns:ns1="http://schemas.microsoft.com/office/word/2006/wordml" xmlns:ns2="urn:eway:document-schemas:export-wml-lead" xmlns:ns3="errors@urn:eway:document-schemas:export-wml-lead" w:macrosPresent="no" w:embeddedObjPresent="no" w:ocxPresent="no" xml:space="preserve">
       <w:ignoreElements w:val="http://schemas.microsoft.com/office/word/2003/wordml/sp2" />
       <o:DocumentProperties>
         <o:Title>Nabídka</o:Title>
         <o:Author>Jan Lalinský</o:Author>
-        <o:LastAuthor>jfrondl</o:LastAuthor>
-        <o:Revision>3</o:Revision>
-        <o:TotalTime>2</o:TotalTime>
+        <o:LastAuthor>Adam Drobný</o:LastAuthor>
+        <o:Revision>13</o:Revision>
+        <o:TotalTime>12</o:TotalTime>
         <o:LastPrinted>2020-06-23T11:00:00Z</o:LastPrinted>
         <o:Created>2020-09-30T06:11:00Z</o:Created>
-        <o:LastSaved>2020-09-30T06:13:00Z</o:LastSaved>
+        <o:LastSaved>2023-06-20T08:37:00Z</o:LastSaved>
         <o:Pages>1</o:Pages>
-        <o:Words>86</o:Words>
-        <o:Characters>514</o:Characters>
+        <o:Words>92</o:Words>
+        <o:Characters>526</o:Characters>
         <o:Lines>4</o:Lines>
         <o:Paragraphs>1</o:Paragraphs>
-        <o:CharactersWithSpaces>599</o:CharactersWithSpaces>
+        <o:CharactersWithSpaces>617</o:CharactersWithSpaces>
         <o:Version>11.0000</o:Version>
       </o:DocumentProperties>
       <o:CustomDocumentProperties>
@@ -67,19 +67,19 @@ DECLARE @Definition NVARCHAR(MAX);
           <w:pitch w:val="variable" />
           <w:sig w:usb-0="E1003EFF" w:usb-1="C000605B" w:usb-2="00000029" w:usb-3="00000000" w:csb-0="000101FF" w:csb-1="00000000" />
         </w:font>
-        <w:font w:name="Calibri">
-          <w:panose-1 w:val="020F0502020204030204" />
-          <w:charset w:val="EE" />
-          <w:family w:val="Swiss" />
-          <w:pitch w:val="variable" />
-          <w:sig w:usb-0="E4003EFF" w:usb-1="C000247B" w:usb-2="00000009" w:usb-3="00000000" w:csb-0="000001FF" w:csb-1="00000000" />
-        </w:font>
         <w:font w:name="Cambria">
           <w:panose-1 w:val="02040503050406030204" />
           <w:charset w:val="EE" />
           <w:family w:val="Roman" />
           <w:pitch w:val="variable" />
           <w:sig w:usb-0="E00006FF" w:usb-1="420024FF" w:usb-2="00000000" w:usb-3="00000000" w:csb-0="0000019F" w:csb-1="00000000" />
+        </w:font>
+        <w:font w:name="Calibri">
+          <w:panose-1 w:val="020F0502020204030204" />
+          <w:charset w:val="EE" />
+          <w:family w:val="Swiss" />
+          <w:pitch w:val="variable" />
+          <w:sig w:usb-0="E4003EFF" w:usb-1="C000247B" w:usb-2="00000009" w:usb-3="00000000" w:csb-0="000001FF" w:csb-1="00000000" />
         </w:font>
         <w:font w:name="Segoe UI">
           <w:panose-1 w:val="020B0502040204020203" />
@@ -268,7 +268,7 @@ DECLARE @Definition NVARCHAR(MAX);
         </w:style>
       </w:styles>
       <w:shapeDefaults>
-        <o:shapedefaults v:ext="edit" spidmax="12290" />
+        <o:shapedefaults v:ext="edit" spidmax="28674" />
         <o:shapelayout v:ext="edit">
           <o:idmap v:ext="edit" data="1" />
         </o:shapelayout>
@@ -288,18 +288,18 @@ DECLARE @Definition NVARCHAR(MAX);
         <w:ignoreMixedContent />
         <w:alwaysShowPlaceholderText w:val="off" />
         <w:hdrShapeDefaults>
-          <o:shapedefaults v:ext="edit" spidmax="12290" />
+          <o:shapedefaults v:ext="edit" spidmax="28674" />
         </w:hdrShapeDefaults>
         <w:footnotePr>
           <w:footnote w:type="separator">
-            <w:p wsp:rsidR="003B5FAA" wsp:rsidRDefault="003B5FAA" wsp:rsidP="00553DEF">
+            <w:p wsp:rsidR="009B7003" wsp:rsidRDefault="009B7003" wsp:rsidP="00553DEF">
               <w:r>
                 <w:separator />
               </w:r>
             </w:p>
           </w:footnote>
           <w:footnote w:type="continuation-separator">
-            <w:p wsp:rsidR="003B5FAA" wsp:rsidRDefault="003B5FAA" wsp:rsidP="00553DEF">
+            <w:p wsp:rsidR="009B7003" wsp:rsidRDefault="009B7003" wsp:rsidP="00553DEF">
               <w:r>
                 <w:continuationSeparator />
               </w:r>
@@ -308,14 +308,14 @@ DECLARE @Definition NVARCHAR(MAX);
         </w:footnotePr>
         <w:endnotePr>
           <w:endnote w:type="separator">
-            <w:p wsp:rsidR="003B5FAA" wsp:rsidRDefault="003B5FAA" wsp:rsidP="00553DEF">
+            <w:p wsp:rsidR="009B7003" wsp:rsidRDefault="009B7003" wsp:rsidP="00553DEF">
               <w:r>
                 <w:separator />
               </w:r>
             </w:p>
           </w:endnote>
           <w:endnote w:type="continuation-separator">
-            <w:p wsp:rsidR="003B5FAA" wsp:rsidRDefault="003B5FAA" wsp:rsidP="00553DEF">
+            <w:p wsp:rsidR="009B7003" wsp:rsidRDefault="009B7003" wsp:rsidP="00553DEF">
               <w:r>
                 <w:continuationSeparator />
               </w:r>
@@ -341,6 +341,7 @@ DECLARE @Definition NVARCHAR(MAX);
           <wsp:rsid wsp:val="000269A8" />
           <wsp:rsid wsp:val="00030C7E" />
           <wsp:rsid wsp:val="000342FC" />
+          <wsp:rsid wsp:val="00036935" />
           <wsp:rsid wsp:val="000456F3" />
           <wsp:rsid wsp:val="00072F78" />
           <wsp:rsid wsp:val="00080EA3" />
@@ -355,10 +356,13 @@ DECLARE @Definition NVARCHAR(MAX);
           <wsp:rsid wsp:val="00125DEB" />
           <wsp:rsid wsp:val="0016120E" />
           <wsp:rsid wsp:val="00164766" />
+          <wsp:rsid wsp:val="00186776" />
+          <wsp:rsid wsp:val="001B5CC6" />
           <wsp:rsid wsp:val="001D5D74" />
           <wsp:rsid wsp:val="001D6077" />
           <wsp:rsid wsp:val="001E2B9C" />
           <wsp:rsid wsp:val="001E327B" />
+          <wsp:rsid wsp:val="001F4B69" />
           <wsp:rsid wsp:val="0023655C" />
           <wsp:rsid wsp:val="002518A4" />
           <wsp:rsid wsp:val="002548F2" />
@@ -372,6 +376,7 @@ DECLARE @Definition NVARCHAR(MAX);
           <wsp:rsid wsp:val="002D5B51" />
           <wsp:rsid wsp:val="002D74F3" />
           <wsp:rsid wsp:val="002F1C5D" />
+          <wsp:rsid wsp:val="00303998" />
           <wsp:rsid wsp:val="003313E7" />
           <wsp:rsid wsp:val="00334ADE" />
           <wsp:rsid wsp:val="003379C1" />
@@ -387,6 +392,8 @@ DECLARE @Definition NVARCHAR(MAX);
           <wsp:rsid wsp:val="003E26E2" />
           <wsp:rsid wsp:val="003E3394" />
           <wsp:rsid wsp:val="003E5709" />
+          <wsp:rsid wsp:val="003F01DA" />
+          <wsp:rsid wsp:val="004334F6" />
           <wsp:rsid wsp:val="0043707A" />
           <wsp:rsid wsp:val="00455CC2" />
           <wsp:rsid wsp:val="00464565" />
@@ -398,7 +405,9 @@ DECLARE @Definition NVARCHAR(MAX);
           <wsp:rsid wsp:val="004C08F4" />
           <wsp:rsid wsp:val="004C37E5" />
           <wsp:rsid wsp:val="004C4313" />
+          <wsp:rsid wsp:val="004C5C69" />
           <wsp:rsid wsp:val="004F2A64" />
+          <wsp:rsid wsp:val="004F2F7F" />
           <wsp:rsid wsp:val="005270EA" />
           <wsp:rsid wsp:val="00534228" />
           <wsp:rsid wsp:val="00553DEF" />
@@ -432,6 +441,7 @@ DECLARE @Definition NVARCHAR(MAX);
           <wsp:rsid wsp:val="00705B14" />
           <wsp:rsid wsp:val="00711965" />
           <wsp:rsid wsp:val="007431E8" />
+          <wsp:rsid wsp:val="00744AEA" />
           <wsp:rsid wsp:val="007669EA" />
           <wsp:rsid wsp:val="00777393" />
           <wsp:rsid wsp:val="007874FD" />
@@ -446,6 +456,7 @@ DECLARE @Definition NVARCHAR(MAX);
           <wsp:rsid wsp:val="007F1316" />
           <wsp:rsid wsp:val="007F27D6" />
           <wsp:rsid wsp:val="007F316B" />
+          <wsp:rsid wsp:val="007F35D6" />
           <wsp:rsid wsp:val="0082455A" />
           <wsp:rsid wsp:val="00825F43" />
           <wsp:rsid wsp:val="00836451" />
@@ -471,6 +482,7 @@ DECLARE @Definition NVARCHAR(MAX);
           <wsp:rsid wsp:val="00972616" />
           <wsp:rsid wsp:val="00975419" />
           <wsp:rsid wsp:val="009A5066" />
+          <wsp:rsid wsp:val="009B7003" />
           <wsp:rsid wsp:val="009C4F6B" />
           <wsp:rsid wsp:val="009D5FFA" />
           <wsp:rsid wsp:val="009E043D" />
@@ -487,14 +499,19 @@ DECLARE @Definition NVARCHAR(MAX);
           <wsp:rsid wsp:val="00A87987" />
           <wsp:rsid wsp:val="00A95BA3" />
           <wsp:rsid wsp:val="00A97F9F" />
+          <wsp:rsid wsp:val="00AB3EDF" />
           <wsp:rsid wsp:val="00AC4022" />
           <wsp:rsid wsp:val="00AE237D" />
           <wsp:rsid wsp:val="00AE3F79" />
+          <wsp:rsid wsp:val="00AE4255" />
           <wsp:rsid wsp:val="00AF3022" />
+          <wsp:rsid wsp:val="00AF41B8" />
+          <wsp:rsid wsp:val="00AF62D8" />
           <wsp:rsid wsp:val="00B245AC" />
           <wsp:rsid wsp:val="00B5022B" />
           <wsp:rsid wsp:val="00B670D9" />
           <wsp:rsid wsp:val="00BA455B" />
+          <wsp:rsid wsp:val="00C12E62" />
           <wsp:rsid wsp:val="00C15AC1" />
           <wsp:rsid wsp:val="00C16102" />
           <wsp:rsid wsp:val="00C22486" />
@@ -505,9 +522,11 @@ DECLARE @Definition NVARCHAR(MAX);
           <wsp:rsid wsp:val="00C76EEB" />
           <wsp:rsid wsp:val="00C909F5" />
           <wsp:rsid wsp:val="00C92CA8" />
+          <wsp:rsid wsp:val="00C96066" />
           <wsp:rsid wsp:val="00CA4D27" />
           <wsp:rsid wsp:val="00CC6635" />
           <wsp:rsid wsp:val="00CD3533" />
+          <wsp:rsid wsp:val="00CD38E9" />
           <wsp:rsid wsp:val="00CF23E6" />
           <wsp:rsid wsp:val="00CF62E8" />
           <wsp:rsid wsp:val="00D00603" />
@@ -517,11 +536,15 @@ DECLARE @Definition NVARCHAR(MAX);
           <wsp:rsid wsp:val="00D428A4" />
           <wsp:rsid wsp:val="00D86EEC" />
           <wsp:rsid wsp:val="00D92D0D" />
+          <wsp:rsid wsp:val="00DB6AA0" />
           <wsp:rsid wsp:val="00DB7653" />
+          <wsp:rsid wsp:val="00DE21AC" />
           <wsp:rsid wsp:val="00DE3A0C" />
           <wsp:rsid wsp:val="00E03514" />
+          <wsp:rsid wsp:val="00E05D18" />
           <wsp:rsid wsp:val="00E22D12" />
           <wsp:rsid wsp:val="00E36AE3" />
+          <wsp:rsid wsp:val="00E42918" />
           <wsp:rsid wsp:val="00E50369" />
           <wsp:rsid wsp:val="00E54F4F" />
           <wsp:rsid wsp:val="00E63ABF" />
@@ -547,6 +570,7 @@ DECLARE @Definition NVARCHAR(MAX);
           <wsp:rsid wsp:val="00F675D4" />
           <wsp:rsid wsp:val="00F736EF" />
           <wsp:rsid wsp:val="00F8406F" />
+          <wsp:rsid wsp:val="00F85EEC" />
           <wsp:rsid wsp:val="00FA3487" />
           <wsp:rsid wsp:val="00FB2DE6" />
           <wsp:rsid wsp:val="00FB541A" />
@@ -557,6 +581,8 @@ DECLARE @Definition NVARCHAR(MAX);
           <wsp:rsid wsp:val="00FD1AC8" />
           <wsp:rsid wsp:val="00FD33E7" />
           <wsp:rsid wsp:val="00FD7B47" />
+          <wsp:rsid wsp:val="00FE0696" />
+          <wsp:rsid wsp:val="00FF0084" />
           <wsp:rsid wsp:val="00FF2518" />
           <wsp:rsid wsp:val="00FF3B29" />
         </wsp:rsids>
@@ -605,7 +631,7 @@ DECLARE @Definition NVARCHAR(MAX);
             <w:lang w:val="CS" />
           </w:rPr> <w:t><xsl:text>Proposal</xsl:text></w:t></w:r>
       </w:p>
-      <w:p wsp:rsidR="002548F2" wsp:rsidRPr="00A87987" wsp:rsidRDefault="00562D3E" wsp:rsidP="00C502B3">
+      <w:p wsp:rsidR="002548F2" wsp:rsidRPr="00A87987" wsp:rsidRDefault="00036935" wsp:rsidP="00C502B3">
         <w:pPr>
           <w:spacing w:after="120" />
           <w:jc w:val="right" />
@@ -623,7 +649,7 @@ DECLARE @Definition NVARCHAR(MAX);
                 <wx:borders>
                   <wx:top wx:val="solid" wx:bdrwidth="10" wx:space="1" wx:color="BFBFBF" />
                 </wx:borders>
-                <w:p wsp:rsidR="00553DEF" wsp:rsidRPr="00553DEF" wsp:rsidRDefault="00562D3E" wsp:rsidP="009237A3">
+                <w:p wsp:rsidR="00553DEF" wsp:rsidRPr="00553DEF" wsp:rsidRDefault="00036935" wsp:rsidP="009237A3">
                   <w:pPr>
                     <w:pStyle w:val="Zpat" />
                     <w:pBdr>
@@ -665,13 +691,13 @@ DECLARE @Definition NVARCHAR(MAX);
                     </w:rPr>
                     <w:fldChar w:fldCharType="separate" />
                   </w:r>
-                  <w:r wsp:rsidR="0025550D">
+                  <w:r wsp:rsidR="00AF41B8">
                     <w:rPr>
                       <w:noProof />
                       <w:color w:val="383838" />
                       <w:sz w:val="18" />
                       <w:sz-cs w:val="18" />
-                    </w:rPr> <w:t><xsl:text>30.09.2020</xsl:text></w:t></w:r>
+                    </w:rPr> <w:t><xsl:text>20.06.2023</xsl:text></w:t></w:r>
                   <w:r>
                     <w:rPr>
                       <w:color w:val="383838" />
@@ -941,7 +967,7 @@ DECLARE @Definition NVARCHAR(MAX);
               <w:gridSpan w:val="2" />
               <w:shd w:val="clear" w:color="auto" w:fill="F2F2F2" />
             </w:tcPr>
-            <w:p wsp:rsidR="00777393" wsp:rsidRPr="0093556A" wsp:rsidRDefault="00562D3E" wsp:rsidP="00C502B3">
+            <w:p wsp:rsidR="00777393" wsp:rsidRPr="0093556A" wsp:rsidRDefault="00036935" wsp:rsidP="00C502B3">
               <w:pPr>
                 <w:ind w:left="120" />
                 <w:rPr>
@@ -983,7 +1009,7 @@ DECLARE @Definition NVARCHAR(MAX);
               <w:gridSpan w:val="2" />
               <w:shd w:val="clear" w:color="auto" w:fill="F2F2F2" />
             </w:tcPr>
-            <w:p wsp:rsidR="002548F2" wsp:rsidRPr="0093556A" wsp:rsidRDefault="00562D3E" wsp:rsidP="002A449E">
+            <w:p wsp:rsidR="002548F2" wsp:rsidRPr="0093556A" wsp:rsidRDefault="00036935" wsp:rsidP="002A449E">
               <w:pPr>
                 <w:spacing w:after="360" />
                 <w:ind w:left="119" />
@@ -1100,7 +1126,7 @@ DECLARE @Definition NVARCHAR(MAX);
               <w:shd w:val="clear" w:color="auto" w:fill="auto" />
               <w:vAlign w:val="center" />
             </w:tcPr>
-            <w:p wsp:rsidR="00F675D4" wsp:rsidRDefault="00562D3E" wsp:rsidP="00F675D4">
+            <w:p wsp:rsidR="00F675D4" wsp:rsidRDefault="00036935" wsp:rsidP="00F675D4">
               <w:pPr>
                 <w:rPr>
                   <w:rFonts w:ascii="Segoe UI" w:h-ansi="Segoe UI" w:cs="Segoe UI" />
@@ -1173,7 +1199,7 @@ DECLARE @Definition NVARCHAR(MAX);
               <w:shd w:val="clear" w:color="auto" w:fill="auto" />
               <w:vAlign w:val="center" />
             </w:tcPr>
-            <w:p wsp:rsidR="00F675D4" wsp:rsidRDefault="00562D3E" wsp:rsidP="00F675D4">
+            <w:p wsp:rsidR="00F675D4" wsp:rsidRDefault="00036935" wsp:rsidP="00F675D4">
               <w:pPr>
                 <w:spacing w:after="360" />
                 <w:rPr>
@@ -1239,7 +1265,7 @@ DECLARE @Definition NVARCHAR(MAX);
           </w:rPr>
         </w:pPr>
       </w:p>
-      <w:p wsp:rsidR="00711965" wsp:rsidRPr="00711965" wsp:rsidRDefault="00562D3E" wsp:rsidP="00711965">
+      <w:p wsp:rsidR="00711965" wsp:rsidRPr="00711965" wsp:rsidRDefault="00036935" wsp:rsidP="00711965">
         <w:pPr>
           <w:ind w:left="-43" />
           <w:rPr>
@@ -1325,7 +1351,7 @@ DECLARE @Definition NVARCHAR(MAX);
           <xsl:value-of select="." />
         </xsl:attribute>
       </xsl:for-each>
-      <w:p wsp:rsidR="002548F2" wsp:rsidRPr="00ED148E" wsp:rsidRDefault="00562D3E" wsp:rsidP="00C502B3">
+      <w:p wsp:rsidR="002548F2" wsp:rsidRPr="00ED148E" wsp:rsidRDefault="00036935" wsp:rsidP="00C502B3">
         <w:pPr>
           <w:ind w:left="120" />
           <w:rPr>
@@ -1366,7 +1392,7 @@ DECLARE @Definition NVARCHAR(MAX);
           <xsl:value-of select="." />
         </xsl:attribute>
       </xsl:for-each>
-      <w:p wsp:rsidR="002548F2" wsp:rsidRPr="0093556A" wsp:rsidRDefault="00562D3E" wsp:rsidP="00C502B3">
+      <w:p wsp:rsidR="002548F2" wsp:rsidRPr="0093556A" wsp:rsidRDefault="00036935" wsp:rsidP="00C502B3">
         <w:pPr>
           <w:ind w:left="120" />
           <w:rPr>
@@ -1407,7 +1433,7 @@ DECLARE @Definition NVARCHAR(MAX);
           <xsl:value-of select="." />
         </xsl:attribute>
       </xsl:for-each>
-      <w:p wsp:rsidR="00777393" wsp:rsidRPr="0093556A" wsp:rsidRDefault="00562D3E" wsp:rsidP="00C502B3">
+      <w:p wsp:rsidR="00777393" wsp:rsidRPr="0093556A" wsp:rsidRDefault="00036935" wsp:rsidP="00C502B3">
         <w:pPr>
           <w:ind w:left="120" />
           <w:rPr>
@@ -1419,8 +1445,18 @@ DECLARE @Definition NVARCHAR(MAX);
             <w:lang w:val="CS" />
           </w:rPr>
         </w:pPr>
-        <xsl:apply-templates select="ns2:Address1PostalCode" />
-        <w:r wsp:rsidR="00BA455B">
+        <xsl:apply-templates select="ns2:Address1City" />
+        <w:r wsp:rsidR="001B5CC6">
+          <w:rPr>
+            <w:rFonts w:ascii="Segoe UI" w:h-ansi="Segoe UI" w:cs="Segoe UI" />
+            <wx:font wx:val="Segoe UI" />
+            <w:color w:val="414042" />
+            <w:sz w:val="22" />
+            <w:sz-cs w:val="22" />
+            <w:lang w:val="CS" />
+          </w:rPr> <w:t><xsl:text>, </xsl:text></w:t></w:r>
+        <xsl:apply-templates select="ns2:Address1State" />
+        <w:r wsp:rsidR="001B5CC6">
           <w:rPr>
             <w:rFonts w:ascii="Segoe UI" w:h-ansi="Segoe UI" w:cs="Segoe UI" />
             <wx:font wx:val="Segoe UI" />
@@ -1429,9 +1465,27 @@ DECLARE @Definition NVARCHAR(MAX);
             <w:sz-cs w:val="22" />
             <w:lang w:val="CS" />
           </w:rPr> <w:t><xsl:text> </xsl:text></w:t></w:r>
-        <xsl:apply-templates select="ns2:Address1City" />
+        <xsl:apply-templates select="ns2:Address1PostalCode" />
       </w:p>
     </ns2:Customer>
+  </xsl:template>
+  <xsl:template match="/ns2:Lead/ns2:Customer[position() &gt;= 3]/ns2:Address1State">
+    <ns2:Address1State>
+      <xsl:for-each select="@ns2:*|@*[namespace-uri()='''']">
+        <xsl:attribute name="{name()}" namespace="{namespace-uri()}">
+          <xsl:value-of select="." />
+        </xsl:attribute>
+      </xsl:for-each>
+      <w:r wsp:rsidR="001B5CC6">
+        <w:rPr>
+          <w:rFonts w:ascii="Segoe UI" w:h-ansi="Segoe UI" w:cs="Segoe UI" />
+          <wx:font wx:val="Segoe UI" />
+          <w:color w:val="414042" />
+          <w:sz w:val="22" />
+          <w:sz-cs w:val="22" />
+          <w:lang w:val="CS" />
+        </w:rPr> <w:t><xsl:value-of select="." /></w:t></w:r>
+    </ns2:Address1State>
   </xsl:template>
   <xsl:template match="/ns2:Lead/ns2:Customer[position() &gt;= 3]/ns2:Address1PostalCode">
     <ns2:Address1PostalCode>
@@ -1440,7 +1494,7 @@ DECLARE @Definition NVARCHAR(MAX);
           <xsl:value-of select="." />
         </xsl:attribute>
       </xsl:for-each>
-      <w:r wsp:rsidR="00BA455B">
+      <w:r wsp:rsidR="001B5CC6">
         <w:rPr>
           <w:rFonts w:ascii="Segoe UI" w:h-ansi="Segoe UI" w:cs="Segoe UI" />
           <wx:font wx:val="Segoe UI" />
@@ -1529,7 +1583,7 @@ DECLARE @Definition NVARCHAR(MAX);
           <xsl:value-of select="." />
         </xsl:attribute>
       </xsl:for-each>
-      <w:r wsp:rsidR="00F675D4" wsp:rsidRPr="005E0DFF">
+      <w:r wsp:rsidR="00AF41B8">
         <w:rPr>
           <w:rFonts w:ascii="Segoe UI Semibold" w:h-ansi="Segoe UI Semibold" w:cs="Segoe UI Semibold" />
           <wx:font wx:val="Segoe UI Semibold" />
@@ -1587,7 +1641,7 @@ DECLARE @Definition NVARCHAR(MAX);
           <xsl:value-of select="." />
         </xsl:attribute>
       </xsl:for-each>
-      <w:p wsp:rsidR="00777393" wsp:rsidRPr="0093556A" wsp:rsidRDefault="00562D3E" wsp:rsidP="002548F2">
+      <w:p wsp:rsidR="00777393" wsp:rsidRPr="0093556A" wsp:rsidRDefault="00036935" wsp:rsidP="002548F2">
         <w:pPr>
           <w:rPr>
             <w:rFonts w:ascii="Segoe UI" w:h-ansi="Segoe UI" w:cs="Segoe UI" />
@@ -1627,7 +1681,7 @@ DECLARE @Definition NVARCHAR(MAX);
           <xsl:value-of select="." />
         </xsl:attribute>
       </xsl:for-each>
-      <w:p wsp:rsidR="002548F2" wsp:rsidRPr="0093556A" wsp:rsidRDefault="00562D3E" wsp:rsidP="009A5066">
+      <w:p wsp:rsidR="002548F2" wsp:rsidRPr="0093556A" wsp:rsidRDefault="00036935" wsp:rsidP="009A5066">
         <w:pPr>
           <w:rPr>
             <w:rFonts w:ascii="Segoe UI" w:h-ansi="Segoe UI" w:cs="Segoe UI" />
@@ -1667,7 +1721,7 @@ DECLARE @Definition NVARCHAR(MAX);
           <xsl:value-of select="." />
         </xsl:attribute>
       </xsl:for-each>
-      <w:p wsp:rsidR="002548F2" wsp:rsidRPr="00ED148E" wsp:rsidRDefault="00562D3E" wsp:rsidP="00D21C9B">
+      <w:p wsp:rsidR="002548F2" wsp:rsidRPr="00ED148E" wsp:rsidRDefault="00036935" wsp:rsidP="00D21C9B">
         <w:pPr>
           <w:rPr>
             <w:rFonts w:ascii="Segoe UI Semibold" w:h-ansi="Segoe UI Semibold" w:cs="Segoe UI Semibold" />
@@ -1707,7 +1761,7 @@ DECLARE @Definition NVARCHAR(MAX);
           <xsl:value-of select="." />
         </xsl:attribute>
       </xsl:for-each>
-      <w:p wsp:rsidR="002548F2" wsp:rsidRPr="0093556A" wsp:rsidRDefault="00562D3E" wsp:rsidP="002548F2">
+      <w:p wsp:rsidR="002548F2" wsp:rsidRPr="0093556A" wsp:rsidRDefault="00036935" wsp:rsidP="002548F2">
         <w:pPr>
           <w:rPr>
             <w:rFonts w:ascii="Segoe UI" w:h-ansi="Segoe UI" w:cs="Segoe UI" />
@@ -1747,7 +1801,7 @@ DECLARE @Definition NVARCHAR(MAX);
           <xsl:value-of select="." />
         </xsl:attribute>
       </xsl:for-each>
-      <w:p wsp:rsidR="00777393" wsp:rsidRPr="0093556A" wsp:rsidRDefault="00562D3E" wsp:rsidP="002548F2">
+      <w:p wsp:rsidR="00777393" wsp:rsidRPr="0093556A" wsp:rsidRDefault="00036935" wsp:rsidP="002548F2">
         <w:pPr>
           <w:rPr>
             <w:rFonts w:ascii="Segoe UI" w:h-ansi="Segoe UI" w:cs="Segoe UI" />
@@ -1758,8 +1812,18 @@ DECLARE @Definition NVARCHAR(MAX);
             <w:lang w:val="CS" />
           </w:rPr>
         </w:pPr>
-        <xsl:apply-templates select="ns2:MyCompanyZip" />
-        <w:r wsp:rsidR="005819D1" wsp:rsidRPr="0093556A">
+        <xsl:apply-templates select="ns2:MyCompanyCity" />
+        <w:r wsp:rsidR="001F4B69">
+          <w:rPr>
+            <w:rFonts w:ascii="Segoe UI" w:h-ansi="Segoe UI" w:cs="Segoe UI" />
+            <wx:font wx:val="Segoe UI" />
+            <w:color w:val="414042" />
+            <w:sz w:val="22" />
+            <w:sz-cs w:val="22" />
+            <w:lang w:val="CS" />
+          </w:rPr> <w:t><xsl:text>, </xsl:text></w:t></w:r>
+        <xsl:apply-templates select="ns2:MyCompanyState" />
+        <w:r wsp:rsidR="001F4B69">
           <w:rPr>
             <w:rFonts w:ascii="Segoe UI" w:h-ansi="Segoe UI" w:cs="Segoe UI" />
             <wx:font wx:val="Segoe UI" />
@@ -1768,9 +1832,27 @@ DECLARE @Definition NVARCHAR(MAX);
             <w:sz-cs w:val="22" />
             <w:lang w:val="CS" />
           </w:rPr> <w:t><xsl:text> </xsl:text></w:t></w:r>
-        <xsl:apply-templates select="ns2:MyCompanyCity" />
+        <xsl:apply-templates select="ns2:MyCompanyZip" />
       </w:p>
     </ns2:MyCompany>
+  </xsl:template>
+  <xsl:template match="/ns2:Lead/ns2:MyCompany[position() &gt;= 3]/ns2:MyCompanyState">
+    <ns2:MyCompanyState>
+      <xsl:for-each select="@ns2:*|@*[namespace-uri()='''']">
+        <xsl:attribute name="{name()}" namespace="{namespace-uri()}">
+          <xsl:value-of select="." />
+        </xsl:attribute>
+      </xsl:for-each>
+      <w:r wsp:rsidR="001F4B69">
+        <w:rPr>
+          <w:rFonts w:ascii="Segoe UI" w:h-ansi="Segoe UI" w:cs="Segoe UI" />
+          <wx:font wx:val="Segoe UI" />
+          <w:color w:val="414042" />
+          <w:sz w:val="22" />
+          <w:sz-cs w:val="22" />
+          <w:lang w:val="CS" />
+        </w:rPr> <w:t><xsl:value-of select="." /></w:t></w:r>
+    </ns2:MyCompanyState>
   </xsl:template>
   <xsl:template match="/ns2:Lead/ns2:MyCompany[position() &gt;= 3]/ns2:MyCompanyCity">
     <ns2:MyCompanyCity>
@@ -1797,7 +1879,7 @@ DECLARE @Definition NVARCHAR(MAX);
           <xsl:value-of select="." />
         </xsl:attribute>
       </xsl:for-each>
-      <w:r wsp:rsidR="005819D1" wsp:rsidRPr="0093556A">
+      <w:r wsp:rsidR="001F4B69" wsp:rsidRPr="0093556A">
         <w:rPr>
           <w:rFonts w:ascii="Segoe UI" w:h-ansi="Segoe UI" w:cs="Segoe UI" />
           <wx:font wx:val="Segoe UI" />
@@ -1874,8 +1956,8 @@ END
 DECLARE @AdminGUID UNIQUEIDENTIFIER;
 	SET @AdminGUID  = (SELECT ItemGUID FROM EWD_Users WHERE UserName = 'admin');
 
-DECLARE @ChangedTime DATETIME;
-	SET @ChangedTime = GETDATE();
+DECLARE @ChangedTime DATETIMEOFFSET;
+	SET @ChangedTime = SYSDATETIMEOFFSET();
 
 DECLARE @ObjectTypeID TINYINT;
 	SET @ObjectTypeID = dbo.GetObjectTypeID(@FolderName);
@@ -1901,7 +1983,7 @@ BEGIN
 		RETURN;
 	END
 	
-	SET @XsltGUID = '3FA60169-A3F5-423B-B10B-19C867A7DC30';
+	SET @XsltGUID = NEWID();
 
 	INSERT INTO	EWD_XsltTransformations 
 		(
