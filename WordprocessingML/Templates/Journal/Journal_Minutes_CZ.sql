@@ -11,7 +11,7 @@ DECLARE @LangCode NVARCHAR(256);
 	SET @LangCode = N'cs';
 	
 DECLARE @Namespace NVARCHAR(256);
-	SET @Namespace = N'urn:eway:document-schemas:Journal';
+	SET @Namespace = N'urn:eway:document-schemas:eWaySystemDefaultJournal';
 
 DECLARE @TransformationVersion INT
 	SET @TransformationVersion = 2; -- Only historical Proposals have version = 1, default is 2
@@ -21,25 +21,25 @@ DECLARE @DuplicateToOtherLanguages INT
 
 DECLARE @Definition NVARCHAR(MAX);
 	SET @Definition = N'<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:w="http://schemas.microsoft.com/office/word/2003/wordml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w10="urn:schemas-microsoft-com:office:word" xmlns:sl="http://schemas.microsoft.com/schemaLibrary/2003/core" xmlns:aml="http://schemas.microsoft.com/aml/2001/core" xmlns:wx="http://schemas.microsoft.com/office/word/2003/auxHint" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:wsp="http://schemas.microsoft.com/office/word/2003/wordml/sp2" xmlns:ns0="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas" xmlns:ns1="http://schemas.microsoft.com/office/word/2006/wordml" xmlns:ns2="urn:eway:document-schemas:Journal">
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:w="http://schemas.microsoft.com/office/word/2003/wordml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w10="urn:schemas-microsoft-com:office:word" xmlns:sl="http://schemas.microsoft.com/schemaLibrary/2003/core" xmlns:aml="http://schemas.microsoft.com/aml/2001/core" xmlns:wx="http://schemas.microsoft.com/office/word/2003/auxHint" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:wsp="http://schemas.microsoft.com/office/word/2003/wordml/sp2" xmlns:ns0="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas" xmlns:ns1="http://schemas.microsoft.com/office/word/2006/wordml" xmlns:ns2="urn:eway:document-schemas:eWaySystemDefaultJournal">
   <xsl:output method="xml" encoding="UTF-8" standalone="yes" />
   <xsl:template match="/">
     <xsl:processing-instruction name="mso-application">
       <xsl:text>progid="Word.Document"</xsl:text>
     </xsl:processing-instruction>
-    <w:wordDocument xmlns:w="http://schemas.microsoft.com/office/word/2003/wordml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w10="urn:schemas-microsoft-com:office:word" xmlns:sl="http://schemas.microsoft.com/schemaLibrary/2003/core" xmlns:aml="http://schemas.microsoft.com/aml/2001/core" xmlns:wx="http://schemas.microsoft.com/office/word/2003/auxHint" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:wsp="http://schemas.microsoft.com/office/word/2003/wordml/sp2" xmlns:ns0="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas" xmlns:ns1="http://schemas.microsoft.com/office/word/2006/wordml" xmlns:ns2="urn:eway:document-schemas:Journal" w:macrosPresent="no" w:embeddedObjPresent="no" w:ocxPresent="no" xml:space="preserve">
+    <w:wordDocument xmlns:w="http://schemas.microsoft.com/office/word/2003/wordml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w10="urn:schemas-microsoft-com:office:word" xmlns:sl="http://schemas.microsoft.com/schemaLibrary/2003/core" xmlns:aml="http://schemas.microsoft.com/aml/2001/core" xmlns:wx="http://schemas.microsoft.com/office/word/2003/auxHint" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:wsp="http://schemas.microsoft.com/office/word/2003/wordml/sp2" xmlns:ns0="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas" xmlns:ns1="http://schemas.microsoft.com/office/word/2006/wordml" xmlns:ns2="urn:eway:document-schemas:eWaySystemDefaultJournal" w:macrosPresent="no" w:embeddedObjPresent="no" w:ocxPresent="no" xml:space="preserve">
       <w:ignoreElements w:val="http://schemas.microsoft.com/office/word/2003/wordml/sp2" />
       <o:DocumentProperties>
         <o:Title>Minutes(Zápis z jednání)</o:Title>
         <o:Author>Jan Lalinský</o:Author>
-        <o:LastAuthor>jfrondl</o:LastAuthor>
-        <o:Revision>5</o:Revision>
-        <o:TotalTime>55</o:TotalTime>
+        <o:LastAuthor>Adam Drobný</o:LastAuthor>
+        <o:Revision>6</o:Revision>
+        <o:TotalTime>58</o:TotalTime>
         <o:Created>2020-10-05T11:06:00Z</o:Created>
-        <o:LastSaved>2020-10-15T13:52:00Z</o:LastSaved>
+        <o:LastSaved>2024-07-29T11:02:00Z</o:LastSaved>
         <o:Pages>1</o:Pages>
-        <o:Words>53</o:Words>
-        <o:Characters>317</o:Characters>
+        <o:Words>55</o:Words>
+        <o:Characters>315</o:Characters>
         <o:Lines>2</o:Lines>
         <o:Paragraphs>1</o:Paragraphs>
         <o:CharactersWithSpaces>369</o:CharactersWithSpaces>
@@ -60,19 +60,19 @@ DECLARE @Definition NVARCHAR(MAX);
           <w:pitch w:val="fixed" />
           <w:sig w:usb-0="00000001" w:usb-1="08070000" w:usb-2="00000010" w:usb-3="00000000" w:csb-0="00020000" w:csb-1="00000000" />
         </w:font>
-        <w:font w:name="Tahoma">
-          <w:panose-1 w:val="020B0604030504040204" />
-          <w:charset w:val="EE" />
-          <w:family w:val="Swiss" />
-          <w:pitch w:val="variable" />
-          <w:sig w:usb-0="E1003EFF" w:usb-1="C000605B" w:usb-2="00000029" w:usb-3="00000000" w:csb-0="000101FF" w:csb-1="00000000" />
-        </w:font>
         <w:font w:name="Calibri">
           <w:panose-1 w:val="020F0502020204030204" />
           <w:charset w:val="EE" />
           <w:family w:val="Swiss" />
           <w:pitch w:val="variable" />
           <w:sig w:usb-0="E4003EFF" w:usb-1="C000247B" w:usb-2="00000009" w:usb-3="00000000" w:csb-0="000001FF" w:csb-1="00000000" />
+        </w:font>
+        <w:font w:name="Tahoma">
+          <w:panose-1 w:val="020B0604030504040204" />
+          <w:charset w:val="EE" />
+          <w:family w:val="Swiss" />
+          <w:pitch w:val="variable" />
+          <w:sig w:usb-0="E1003EFF" w:usb-1="C000605B" w:usb-2="00000029" w:usb-3="00000000" w:csb-0="000101FF" w:csb-1="00000000" />
         </w:font>
         <w:font w:name="Cambria">
           <w:panose-1 w:val="02040503050406030204" />
@@ -310,7 +310,7 @@ DECLARE @Definition NVARCHAR(MAX);
         </w:style>
       </w:styles>
       <w:shapeDefaults>
-        <o:shapedefaults v:ext="edit" spidmax="5122" />
+        <o:shapedefaults v:ext="edit" spidmax="6146" />
         <o:shapelayout v:ext="edit">
           <o:idmap v:ext="edit" data="1" />
         </o:shapelayout>
@@ -326,19 +326,19 @@ DECLARE @Definition NVARCHAR(MAX);
         <w:characterSpacingControl w:val="DontCompress" />
         <w:allowPNG />
         <w:validateAgainstSchema />
-        <w:saveInvalidXML />
+        <w:saveInvalidXML w:val="off" />
         <w:ignoreMixedContent />
         <w:alwaysShowPlaceholderText w:val="off" />
         <w:footnotePr>
           <w:footnote w:type="separator">
-            <w:p wsp:rsidR="000D2FFD" wsp:rsidRDefault="000D2FFD">
+            <w:p wsp:rsidR="008C38D4" wsp:rsidRDefault="008C38D4">
               <w:r>
                 <w:separator />
               </w:r>
             </w:p>
           </w:footnote>
           <w:footnote w:type="continuation-separator">
-            <w:p wsp:rsidR="000D2FFD" wsp:rsidRDefault="000D2FFD">
+            <w:p wsp:rsidR="008C38D4" wsp:rsidRDefault="008C38D4">
               <w:r>
                 <w:continuationSeparator />
               </w:r>
@@ -347,14 +347,14 @@ DECLARE @Definition NVARCHAR(MAX);
         </w:footnotePr>
         <w:endnotePr>
           <w:endnote w:type="separator">
-            <w:p wsp:rsidR="000D2FFD" wsp:rsidRDefault="000D2FFD">
+            <w:p wsp:rsidR="008C38D4" wsp:rsidRDefault="008C38D4">
               <w:r>
                 <w:separator />
               </w:r>
             </w:p>
           </w:endnote>
           <w:endnote w:type="continuation-separator">
-            <w:p wsp:rsidR="000D2FFD" wsp:rsidRDefault="000D2FFD">
+            <w:p wsp:rsidR="008C38D4" wsp:rsidRDefault="008C38D4">
               <w:r>
                 <w:continuationSeparator />
               </w:r>
@@ -384,6 +384,9 @@ DECLARE @Definition NVARCHAR(MAX);
           <wsp:rsid wsp:val="006D55CB" />
           <wsp:rsid wsp:val="00770413" />
           <wsp:rsid wsp:val="007A195E" />
+          <wsp:rsid wsp:val="007B04A9" />
+          <wsp:rsid wsp:val="00823BB2" />
+          <wsp:rsid wsp:val="008C38D4" />
           <wsp:rsid wsp:val="00947A1A" />
           <wsp:rsid wsp:val="00BB7F32" />
           <wsp:rsid wsp:val="00C04DF3" />
@@ -402,7 +405,7 @@ DECLARE @Definition NVARCHAR(MAX);
                 <wx:borders>
                   <wx:top wx:val="solid" wx:bdrwidth="10" wx:space="1" wx:color="BFBFBF" />
                 </wx:borders>
-                <w:p wsp:rsidR="000270F1" wsp:rsidRDefault="001A5CD5">
+                <w:p wsp:rsidR="000270F1" wsp:rsidRDefault="007B04A9">
                   <w:pPr>
                     <w:pStyle w:val="Zpat" />
                     <w:pBdr>
@@ -444,13 +447,13 @@ DECLARE @Definition NVARCHAR(MAX);
                     </w:rPr>
                     <w:fldChar w:fldCharType="separate" />
                   </w:r>
-                  <w:r wsp:rsidR="00770413">
+                  <w:r wsp:rsidR="00823BB2">
                     <w:rPr>
                       <w:noProof />
                       <w:color w:val="383838" />
                       <w:sz w:val="18" />
                       <w:sz-cs w:val="18" />
-                    </w:rPr> <w:t><xsl:text>15.10.2020</xsl:text></w:t></w:r>
+                    </w:rPr> <w:t><xsl:text>29.07.2024</xsl:text></w:t></w:r>
                   <w:r>
                     <w:rPr>
                       <w:color w:val="383838" />
@@ -788,7 +791,7 @@ DECLARE @Definition NVARCHAR(MAX);
               <w:shd w:val="clear" w:color="auto" w:fill="auto" />
               <w:vAlign w:val="center" />
             </w:tcPr>
-            <w:p wsp:rsidR="0009284E" wsp:rsidRDefault="001A5CD5">
+            <w:p wsp:rsidR="0009284E" wsp:rsidRDefault="007B04A9">
               <w:pPr>
                 <w:ind w:left="119" />
                 <w:rPr>
@@ -984,7 +987,7 @@ DECLARE @Definition NVARCHAR(MAX);
           </w:rPr>
         </w:pPr>
       </w:p>
-      <w:p wsp:rsidR="000270F1" wsp:rsidRDefault="001A5CD5">
+      <w:p wsp:rsidR="000270F1" wsp:rsidRDefault="007B04A9">
         <w:pPr>
           <w:rPr>
             <w:rFonts w:ascii="Segoe UI Semibold" w:h-ansi="Segoe UI Semibold" w:cs="Segoe UI Semibold" />
@@ -1016,7 +1019,7 @@ DECLARE @Definition NVARCHAR(MAX);
           </w:rPr>
         </w:pPr>
       </w:p>
-      <w:p wsp:rsidR="000270F1" wsp:rsidRDefault="001A5CD5">
+      <w:p wsp:rsidR="000270F1" wsp:rsidRDefault="007B04A9">
         <w:pPr>
           <w:rPr>
             <w:color w:val="383838" />
@@ -1029,47 +1032,6 @@ DECLARE @Definition NVARCHAR(MAX);
       </w:p>
     </ns2:Journal>
   </xsl:template>
-  <xsl:template match="/ns2:Journal/ns2:Contact">
-    <ns2:Contact>
-      <xsl:for-each select="@ns2:*|@*[namespace-uri()='''']">
-        <xsl:attribute name="{name()}" namespace="{namespace-uri()}">
-          <xsl:value-of select="." />
-        </xsl:attribute>
-      </xsl:for-each>
-      <xsl:apply-templates select="ns2:FileAs" />
-    </ns2:Contact>
-  </xsl:template>
-  <xsl:template match="/ns2:Journal/ns2:Contact/ns2:FileAs">
-    <ns2:FileAs>
-      <xsl:for-each select="@ns2:*|@*[namespace-uri()='''']">
-        <xsl:attribute name="{name()}" namespace="{namespace-uri()}">
-          <xsl:value-of select="." />
-        </xsl:attribute>
-      </xsl:for-each>
-      <w:p wsp:rsidR="000270F1" wsp:rsidRDefault="00454481">
-        <w:pPr>
-          <w:ind w:left="120" />
-          <w:rPr>
-            <w:rFonts w:ascii="Segoe UI" w:h-ansi="Segoe UI" w:cs="Segoe UI" />
-            <wx:font wx:val="Segoe UI" />
-            <w:color w:val="414042" />
-            <w:sz w:val="22" />
-            <w:sz-cs w:val="22" />
-            <w:lang w:val="CS" />
-          </w:rPr>
-        </w:pPr>
-        <w:r>
-          <w:rPr>
-            <w:rFonts w:ascii="Segoe UI" w:h-ansi="Segoe UI" w:cs="Segoe UI" />
-            <wx:font wx:val="Segoe UI" />
-            <w:color w:val="414042" />
-            <w:sz w:val="22" />
-            <w:sz-cs w:val="22" />
-            <w:lang w:val="CS" />
-          </w:rPr> <w:t><xsl:value-of select="." /></w:t></w:r>
-      </w:p>
-    </ns2:FileAs>
-  </xsl:template>
   <xsl:template match="/ns2:Journal/ns2:MyCompany[1]">
     <ns2:MyCompany>
       <xsl:for-each select="@ns2:*|@*[namespace-uri()='''']">
@@ -1077,7 +1039,7 @@ DECLARE @Definition NVARCHAR(MAX);
           <xsl:value-of select="." />
         </xsl:attribute>
       </xsl:for-each>
-      <w:p wsp:rsidR="000270F1" wsp:rsidRDefault="001A5CD5">
+      <w:p wsp:rsidR="000270F1" wsp:rsidRDefault="007B04A9">
         <w:pPr>
           <w:rPr>
             <w:rFonts w:ascii="Segoe UI Semibold" w:h-ansi="Segoe UI Semibold" w:cs="Segoe UI Semibold" />
@@ -1117,7 +1079,7 @@ DECLARE @Definition NVARCHAR(MAX);
           <xsl:value-of select="." />
         </xsl:attribute>
       </xsl:for-each>
-      <w:p wsp:rsidR="000270F1" wsp:rsidRDefault="001A5CD5">
+      <w:p wsp:rsidR="000270F1" wsp:rsidRDefault="007B04A9">
         <w:pPr>
           <w:rPr>
             <w:rFonts w:ascii="Segoe UI" w:h-ansi="Segoe UI" w:cs="Segoe UI" />
@@ -1157,7 +1119,7 @@ DECLARE @Definition NVARCHAR(MAX);
           <xsl:value-of select="." />
         </xsl:attribute>
       </xsl:for-each>
-      <w:p wsp:rsidR="000270F1" wsp:rsidRDefault="001A5CD5">
+      <w:p wsp:rsidR="000270F1" wsp:rsidRDefault="007B04A9">
         <w:pPr>
           <w:rPr>
             <w:rFonts w:ascii="Segoe UI" w:h-ansi="Segoe UI" w:cs="Segoe UI" />
@@ -1218,6 +1180,40 @@ DECLARE @Definition NVARCHAR(MAX);
         </w:rPr> <w:t><xsl:value-of select="." /></w:t></w:r>
     </ns2:MyCompanyZip>
   </xsl:template>
+  <xsl:template match="/ns2:Journal/ns2:Note">
+    <ns2:Note>
+      <xsl:for-each select="@ns2:*|@*[namespace-uri()='''']">
+        <xsl:attribute name="{name()}" namespace="{namespace-uri()}">
+          <xsl:value-of select="." />
+        </xsl:attribute>
+      </xsl:for-each>
+      <w:r wsp:rsidR="00454481">
+        <w:rPr>
+          <w:color w:val="383838" />
+          <w:sz w:val="22" />
+          <w:sz-cs w:val="22" />
+          <w:lang w:val="CS" />
+        </w:rPr> <w:t><xsl:value-of select="." /></w:t></w:r>
+    </ns2:Note>
+  </xsl:template>
+  <xsl:template match="/ns2:Journal/ns2:FileAs">
+    <ns2:FileAs>
+      <xsl:for-each select="@ns2:*|@*[namespace-uri()='''']">
+        <xsl:attribute name="{name()}" namespace="{namespace-uri()}">
+          <xsl:value-of select="." />
+        </xsl:attribute>
+      </xsl:for-each>
+      <w:r wsp:rsidR="00454481">
+        <w:rPr>
+          <w:rFonts w:ascii="Segoe UI Semibold" w:h-ansi="Segoe UI Semibold" w:cs="Segoe UI Semibold" />
+          <wx:font wx:val="Segoe UI Semibold" />
+          <w:color w:val="414042" />
+          <w:sz w:val="22" />
+          <w:sz-cs w:val="22" />
+          <w:lang w:val="CS" />
+        </w:rPr> <w:t><xsl:value-of select="." /></w:t></w:r>
+    </ns2:FileAs>
+  </xsl:template>
   <xsl:template match="/ns2:Journal/ns2:Company[1]">
     <ns2:Company>
       <xsl:for-each select="@ns2:*|@*[namespace-uri()='''']">
@@ -1225,7 +1221,7 @@ DECLARE @Definition NVARCHAR(MAX);
           <xsl:value-of select="." />
         </xsl:attribute>
       </xsl:for-each>
-      <w:p wsp:rsidR="000270F1" wsp:rsidRDefault="001A5CD5">
+      <w:p wsp:rsidR="000270F1" wsp:rsidRDefault="007B04A9">
         <w:pPr>
           <w:ind w:left="120" />
           <w:rPr>
@@ -1266,7 +1262,7 @@ DECLARE @Definition NVARCHAR(MAX);
           <xsl:value-of select="." />
         </xsl:attribute>
       </xsl:for-each>
-      <w:p wsp:rsidR="000270F1" wsp:rsidRDefault="001A5CD5">
+      <w:p wsp:rsidR="000270F1" wsp:rsidRDefault="007B04A9">
         <w:pPr>
           <w:ind w:left="120" />
           <w:rPr>
@@ -1307,7 +1303,7 @@ DECLARE @Definition NVARCHAR(MAX);
           <xsl:value-of select="." />
         </xsl:attribute>
       </xsl:for-each>
-      <w:p wsp:rsidR="000270F1" wsp:rsidRDefault="001A5CD5">
+      <w:p wsp:rsidR="000270F1" wsp:rsidRDefault="007B04A9">
         <w:pPr>
           <w:spacing w:after="360" />
           <w:ind w:left="119" />
@@ -1330,9 +1326,27 @@ DECLARE @Definition NVARCHAR(MAX);
             <w:sz-cs w:val="22" />
             <w:lang w:val="CS" />
           </w:rPr> <w:t><xsl:text> </xsl:text></w:t></w:r>
-        <xsl:apply-templates select="ns2:Address2Street" />
+        <xsl:apply-templates select="ns2:Address1City" />
       </w:p>
     </ns2:Company>
+  </xsl:template>
+  <xsl:template match="/ns2:Journal/ns2:Company[position() &gt;= 3]/ns2:Address1City">
+    <ns2:Address1City>
+      <xsl:for-each select="@ns2:*|@*[namespace-uri()='''']">
+        <xsl:attribute name="{name()}" namespace="{namespace-uri()}">
+          <xsl:value-of select="." />
+        </xsl:attribute>
+      </xsl:for-each>
+      <w:r wsp:rsidR="00454481">
+        <w:rPr>
+          <w:rFonts w:ascii="Segoe UI" w:h-ansi="Segoe UI" w:cs="Segoe UI" />
+          <wx:font wx:val="Segoe UI" />
+          <w:color w:val="414042" />
+          <w:sz w:val="22" />
+          <w:sz-cs w:val="22" />
+          <w:lang w:val="CS" />
+        </w:rPr> <w:t><xsl:value-of select="." /></w:t></w:r>
+    </ns2:Address1City>
   </xsl:template>
   <xsl:template match="/ns2:Journal/ns2:Company[position() &gt;= 3]/ns2:Address1PostalCode">
     <ns2:Address1PostalCode>
@@ -1352,14 +1366,14 @@ DECLARE @Definition NVARCHAR(MAX);
         </w:rPr> <w:t><xsl:value-of select="." /></w:t></w:r>
     </ns2:Address1PostalCode>
   </xsl:template>
-  <xsl:template match="/ns2:Journal/ns2:Company[position() &gt;= 3]/ns2:Address2Street">
-    <ns2:Address2Street>
+  <xsl:template match="/ns2:Journal/ns2:EventStart">
+    <ns2:EventStart>
       <xsl:for-each select="@ns2:*|@*[namespace-uri()='''']">
         <xsl:attribute name="{name()}" namespace="{namespace-uri()}">
           <xsl:value-of select="." />
         </xsl:attribute>
       </xsl:for-each>
-      <w:r wsp:rsidR="00454481">
+      <w:r wsp:rsidR="0009284E">
         <w:rPr>
           <w:rFonts w:ascii="Segoe UI" w:h-ansi="Segoe UI" w:cs="Segoe UI" />
           <wx:font wx:val="Segoe UI" />
@@ -1368,25 +1382,7 @@ DECLARE @Definition NVARCHAR(MAX);
           <w:sz-cs w:val="22" />
           <w:lang w:val="CS" />
         </w:rPr> <w:t><xsl:value-of select="." /></w:t></w:r>
-    </ns2:Address2Street>
-  </xsl:template>
-  <xsl:template match="/ns2:Journal/ns2:FileAs">
-    <ns2:FileAs>
-      <xsl:for-each select="@ns2:*|@*[namespace-uri()='''']">
-        <xsl:attribute name="{name()}" namespace="{namespace-uri()}">
-          <xsl:value-of select="." />
-        </xsl:attribute>
-      </xsl:for-each>
-      <w:r wsp:rsidR="00454481">
-        <w:rPr>
-          <w:rFonts w:ascii="Segoe UI Semibold" w:h-ansi="Segoe UI Semibold" w:cs="Segoe UI Semibold" />
-          <wx:font wx:val="Segoe UI Semibold" />
-          <w:color w:val="414042" />
-          <w:sz w:val="22" />
-          <w:sz-cs w:val="22" />
-          <w:lang w:val="CS" />
-        </w:rPr> <w:t><xsl:value-of select="." /></w:t></w:r>
-    </ns2:FileAs>
+    </ns2:EventStart>
   </xsl:template>
   <xsl:template match="/ns2:Journal/ns2:SuperiorItem">
     <ns2:SuperiorItem>
@@ -1395,7 +1391,7 @@ DECLARE @Definition NVARCHAR(MAX);
           <xsl:value-of select="." />
         </xsl:attribute>
       </xsl:for-each>
-      <w:p wsp:rsidR="000270F1" wsp:rsidRDefault="001A5CD5">
+      <w:p wsp:rsidR="000270F1" wsp:rsidRDefault="007B04A9">
         <w:pPr>
           <w:spacing w:after="120" />
           <w:jc w:val="right" />
@@ -1436,7 +1432,7 @@ DECLARE @Definition NVARCHAR(MAX);
           <xsl:value-of select="." />
         </xsl:attribute>
       </xsl:for-each>
-      <w:p wsp:rsidR="000270F1" wsp:rsidRDefault="001A5CD5">
+      <w:p wsp:rsidR="000270F1" wsp:rsidRDefault="007B04A9">
         <w:pPr>
           <w:rPr>
             <w:rFonts w:ascii="Segoe UI" w:h-ansi="Segoe UI" w:cs="Segoe UI" />
@@ -1510,39 +1506,46 @@ DECLARE @Definition NVARCHAR(MAX);
       </w:p>
     </ns2:FileAs>
   </xsl:template>
-  <xsl:template match="/ns2:Journal/ns2:Note">
-    <ns2:Note>
+  <xsl:template match="/ns2:Journal/ns2:Contact">
+    <ns2:Contact>
       <xsl:for-each select="@ns2:*|@*[namespace-uri()='''']">
         <xsl:attribute name="{name()}" namespace="{namespace-uri()}">
           <xsl:value-of select="." />
         </xsl:attribute>
       </xsl:for-each>
-      <w:r wsp:rsidR="00454481">
-        <w:rPr>
-          <w:color w:val="383838" />
-          <w:sz w:val="22" />
-          <w:sz-cs w:val="22" />
-          <w:lang w:val="CS" />
-        </w:rPr> <w:t><xsl:value-of select="." /></w:t></w:r>
-    </ns2:Note>
+      <xsl:apply-templates select="ns2:FileAs" />
+    </ns2:Contact>
   </xsl:template>
-  <xsl:template match="/ns2:Journal/ns2:EventStart">
-    <ns2:EventStart>
+  <xsl:template match="/ns2:Journal/ns2:Contact/ns2:FileAs">
+    <ns2:FileAs>
       <xsl:for-each select="@ns2:*|@*[namespace-uri()='''']">
         <xsl:attribute name="{name()}" namespace="{namespace-uri()}">
           <xsl:value-of select="." />
         </xsl:attribute>
       </xsl:for-each>
-      <w:r wsp:rsidR="0009284E">
-        <w:rPr>
-          <w:rFonts w:ascii="Segoe UI" w:h-ansi="Segoe UI" w:cs="Segoe UI" />
-          <wx:font wx:val="Segoe UI" />
-          <w:color w:val="414042" />
-          <w:sz w:val="22" />
-          <w:sz-cs w:val="22" />
-          <w:lang w:val="CS" />
-        </w:rPr> <w:t><xsl:value-of select="." /></w:t></w:r>
-    </ns2:EventStart>
+      <w:p wsp:rsidR="000270F1" wsp:rsidRDefault="00454481">
+        <w:pPr>
+          <w:ind w:left="120" />
+          <w:rPr>
+            <w:rFonts w:ascii="Segoe UI" w:h-ansi="Segoe UI" w:cs="Segoe UI" />
+            <wx:font wx:val="Segoe UI" />
+            <w:color w:val="414042" />
+            <w:sz w:val="22" />
+            <w:sz-cs w:val="22" />
+            <w:lang w:val="CS" />
+          </w:rPr>
+        </w:pPr>
+        <w:r>
+          <w:rPr>
+            <w:rFonts w:ascii="Segoe UI" w:h-ansi="Segoe UI" w:cs="Segoe UI" />
+            <wx:font wx:val="Segoe UI" />
+            <w:color w:val="414042" />
+            <w:sz w:val="22" />
+            <w:sz-cs w:val="22" />
+            <w:lang w:val="CS" />
+          </w:rPr> <w:t><xsl:value-of select="." /></w:t></w:r>
+      </w:p>
+    </ns2:FileAs>
   </xsl:template>
 </xsl:stylesheet>';
 
@@ -1569,8 +1572,8 @@ END
 DECLARE @AdminGUID UNIQUEIDENTIFIER;
 	SET @AdminGUID  = (SELECT ItemGUID FROM EWD_Users WHERE UserName = 'admin');
 
-DECLARE @ChangedTime DATETIME;
-	SET @ChangedTime = GETDATE();
+DECLARE @ChangedTime DATETIMEOFFSET;
+	SET @ChangedTime = SYSDATETIMEOFFSET();
 
 DECLARE @ObjectTypeID TINYINT;
 	SET @ObjectTypeID = dbo.GetObjectTypeID(@FolderName);
