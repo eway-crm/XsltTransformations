@@ -72,9 +72,7 @@ BEGIN
 		RETURN;
 	END
 	
-	SET @XsltGUID = CASE WHEN @Name = N'Zápis z jednání' AND @LangCode = 'cs' AND @ObjectTypeID = dbo.GetObjectTypeID('Journal') THEN 'C6EF8801-2741-47FE-90A7-97167A29789C' --ItemGUID from default cs DB (eWay_Single)
-						 WHEN @Name = N'Minutes'		 AND @LangCode = 'en' AND @ObjectTypeID = dbo.GetObjectTypeID('Journal') THEN '958037F0-6C5E-4A62-83FB-F0F0FAF64A87' --ItemGUID from default cs DB (eWay_Single)
-						ELSE NEWID() END;
+	SET @XsltGUID = NEWID();
 
 	INSERT INTO	EWD_XsltTransformations 
 		(
