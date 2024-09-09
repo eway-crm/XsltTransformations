@@ -15,11 +15,11 @@ namespace Wml2Ew
 
         static void Main(string[] args)
         {
-            string xmlFileName, xmlNameSpace, fileAs, folderName, language;
+            string xmlFileName, xmlNameSpace, fileAs, folderName, language, itemGuid;
             byte version;
             bool duplicateToOtherLanguages;
 
-            if (CheckInputParameters(args, out xmlFileName, out xmlNameSpace, out fileAs, out folderName, out language, out version, out duplicateToOtherLanguages))
+            if (CheckInputParameters(args, out xmlFileName, out xmlNameSpace, out fileAs, out folderName, out language, out version, out duplicateToOtherLanguages, out itemGuid))
             {
                 // Convert xml to xsl
                 string xsl = CreateXsl(xmlFileName, xmlNameSpace);
@@ -27,7 +27,7 @@ namespace Wml2Ew
                 if (!string.IsNullOrEmpty(xsl))
                 {
                     // Generate slq script
-                    CreateSqlScript(xmlFileName, xsl, fileAs, folderName, xmlNameSpace, language, version, duplicateToOtherLanguages);
+                    CreateSqlScript(xmlFileName, xsl, fileAs, folderName, xmlNameSpace, language, version, duplicateToOtherLanguages, itemGuid);
                 }
             }
 
@@ -39,9 +39,9 @@ namespace Wml2Ew
         private static string Wml2XsltPath => Path.Combine(Directory.GetParent(Assembly.GetEntryAssembly().Location).FullName, Constants.WML2XSLT_FILE_NAME);
 
         private static bool CheckInputParameters(string[] args, out string xmlFileName, out string xmlNameSpace, out string fileAs, out string folderName, out string language, out byte version, 
-            out bool duplicateToOtherLanguages)
+            out bool duplicateToOtherLanguages, out string itemGuid)
         {
-            xmlFileName = xmlNameSpace = fileAs = folderName = null;
+            xmlFileName = xmlNameSpace = fileAs = folderName = itemGuid = null;
             language = "en";
             version = 2;
             duplicateToOtherLanguages = false;
@@ -71,6 +71,7 @@ namespace Wml2Ew
             language = args.Length >= 5 ? args[4] : "en";
             version = args.Length >= 6 ? Convert.ToByte(args[5]) : (byte)2;
             duplicateToOtherLanguages = args.Length >= 7 ? args[6] == "1" ? true : false : false;
+            itemGuid = args.Length >= 8 ? args[7] : null;
 
             if (!File.Exists(xmlFileName))
             {
@@ -99,6 +100,14 @@ namespace Wml2Ew
             if (version != 1 && version != 2)
             {
                 WriteError($"{version} is not valid transformation version");
+                return false;
+            }
+
+            bool isValid = Guid.TryParseExact(itemGuid, "D", out _);
+
+            if (itemGuid != null && isValid != true)
+            {
+                WriteError($"{itemGuid} is not in valid format");
                 return false;
             }
 
@@ -141,7 +150,7 @@ namespace Wml2Ew
             return null;
         }
 
-        private static void CreateSqlScript(string xmlFileName, string xsl, string fileAs, string folderName, string xmlNamespace, string languageCode, int version, bool duplicateToOtherLanguages)
+        private static void CreateSqlScript(string xmlFileName, string xsl, string fileAs, string folderName, string xmlNamespace, string languageCode, int version, bool duplicateToOtherLanguages, string itemGuid)
         {
             var stream = typeof(Program).Assembly.GetManifestResourceStream("Wml2Ew.XsltTransformation.sql");
             string sqlScript = new StreamReader(stream).ReadToEnd();
@@ -153,6 +162,7 @@ namespace Wml2Ew
                 .Replace(Constants.XML_NAMESPACE_PARAMETER, xmlNamespace)
                 .Replace(Constants.TRANSFORMATION_VERSION_PARAMETER, version.ToString())
                 .Replace(Constants.DUPLICATE_TO_OTHER_LANGUAGES_PARAMETER, duplicateToOtherLanguages ? "1" : "0")
+                .Replace(Constants.ITEMGUID_PARAMETER, itemGuid)
                 .Replace(Constants.LANGUAGE_CODE_LIST_SQL_SCRIPT_PLACE_HOLDER, $"'{string.Join("', '", LANGUAGES)}'")
                 .Replace(Constants.LANGUAGE_CODE_LIST_STRING_SQL_SCRIPT_PLACE_HOLDER, string.Join(", ", LANGUAGES))
                 .Replace(Constants.XSL_PARAMETER, xsl.Replace("'", "''"));
