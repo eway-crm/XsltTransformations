@@ -19,8 +19,8 @@ DECLARE @TransformationVersion INT
 DECLARE @DuplicateToOtherLanguages INT
 	SET @DuplicateToOtherLanguages = $DuplicateToOtherLanguages$	-- Set to 1 if you want to copy the same definition to other languages
 
-DECLARE @DefaultItemGUID UNIQUEIDENTIFIER;
-	SET @DefaultItemGUID = N'$ItemGUID$'; --Fill ItemGUID from default eWay DB when manually deploying system word template on the server for the first time
+DECLARE @ItemGUID UNIQUEIDENTIFIER;
+	SET @ItemGUID = $ItemGUID$; -- Fill GUID if you need to use the same identifier across multiple databases
 
 DECLARE @Definition NVARCHAR(MAX);
 	SET @Definition = N'$Xsl$';
@@ -75,7 +75,7 @@ BEGIN
 		RETURN;
 	END
 	
-	SET @XsltGUID = IIF(@DefaultItemGUID <> '', @DefaultItemGUID, NEWID());
+	SET @XsltGUID = ISNULL(@ItemGUID, NEWID());
 
 	INSERT INTO	EWD_XsltTransformations 
 		(
@@ -89,10 +89,10 @@ BEGIN
 			Server_ItemCreated,
 			Server_ItemChanged,
 			ObjectTypeID,
-			Definition,
+			[Definition],
 			FileAs,
 			LangCode,
-			Namespace,
+			[Namespace],
 			TransformationVersion
 		)
 	VALUES

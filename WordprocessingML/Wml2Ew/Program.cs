@@ -103,9 +103,7 @@ namespace Wml2Ew
                 return false;
             }
 
-            bool isValid = Guid.TryParseExact(itemGuid, "D", out _);
-
-            if (itemGuid != null && isValid != true)
+            if (itemGuid != null && !Guid.TryParseExact(itemGuid, "D", out _))
             {
                 WriteError($"{itemGuid} is not in valid format");
                 return false;
@@ -162,7 +160,7 @@ namespace Wml2Ew
                 .Replace(Constants.XML_NAMESPACE_PARAMETER, xmlNamespace)
                 .Replace(Constants.TRANSFORMATION_VERSION_PARAMETER, version.ToString())
                 .Replace(Constants.DUPLICATE_TO_OTHER_LANGUAGES_PARAMETER, duplicateToOtherLanguages ? "1" : "0")
-                .Replace(Constants.ITEMGUID_PARAMETER, itemGuid)
+                .Replace(Constants.ITEMGUID_PARAMETER, itemGuid == null ? "NULL" : $"'{itemGuid}'")
                 .Replace(Constants.LANGUAGE_CODE_LIST_SQL_SCRIPT_PLACE_HOLDER, $"'{string.Join("', '", LANGUAGES)}'")
                 .Replace(Constants.LANGUAGE_CODE_LIST_STRING_SQL_SCRIPT_PLACE_HOLDER, string.Join(", ", LANGUAGES))
                 .Replace(Constants.XSL_PARAMETER, xsl.Replace("'", "''"));
