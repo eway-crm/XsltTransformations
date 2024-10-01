@@ -19,6 +19,9 @@ DECLARE @TransformationVersion INT
 DECLARE @DuplicateToOtherLanguages INT
 	SET @DuplicateToOtherLanguages = 0	-- Set to 1 if you want to copy the same definition to other languages
 
+DECLARE @ItemGUID UNIQUEIDENTIFIER;
+	SET @ItemGUID = 'E5EA2A3A-CC95-450D-B6B6-5B1E5DA5F013'; -- Fill GUID if you need to use the same identifier across multiple databases
+
 DECLARE @Definition NVARCHAR(MAX);
 	SET @Definition = N'<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:w="http://schemas.microsoft.com/office/word/2003/wordml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w10="urn:schemas-microsoft-com:office:word" xmlns:sl="http://schemas.microsoft.com/schemaLibrary/2003/core" xmlns:aml="http://schemas.microsoft.com/aml/2001/core" xmlns:wx="http://schemas.microsoft.com/office/word/2003/auxHint" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:wsp="http://schemas.microsoft.com/office/word/2003/wordml/sp2" xmlns:ns0="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas" xmlns:ns1="http://schemas.microsoft.com/office/word/2006/wordml" xmlns:ns2="urn:eway:document-schemas:eWaySystemDefaultJournal">
@@ -1588,7 +1591,7 @@ BEGIN
 		RETURN;
 	END
 	
-	SET @XsltGUID = NEWID();
+	SET @XsltGUID = ISNULL(@ItemGUID, NEWID());
 
 	INSERT INTO	EWD_XsltTransformations 
 		(
@@ -1602,10 +1605,10 @@ BEGIN
 			Server_ItemCreated,
 			Server_ItemChanged,
 			ObjectTypeID,
-			Definition,
+			[Definition],
 			FileAs,
 			LangCode,
-			Namespace,
+			[Namespace],
 			TransformationVersion
 		)
 	VALUES
