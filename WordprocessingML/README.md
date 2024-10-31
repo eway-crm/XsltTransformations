@@ -140,3 +140,13 @@ After you save and run **transform.bat**, it runs a **Wml2Ew.exe** utility and S
 As soon as you execute the SQL script on the eWay-CRM server database users should be able to [see the template in eWay-CRM](https://kb.eway-crm.com/documentation/3-description/3-6-integration-with-microsoft-office/3-6-2-microsoft-word-and-excel/data-export-into-ms-word).
 
 ![export-to-word](Images/export-to-word.png)
+
+## Troubleshooting
+
+* Error after export from eWay-CRM: `Ambigous cell mapping encountered. Possible missing paragpraph element. <p> elements are required before every </tc>`
+
+![error](Images/error.png)
+
+Solution: There is probably white outer AF element in word template, which must be corrected to pink (see the last part of **Create template** section)
+
+![element-before-fix](Images/white-element.png)
