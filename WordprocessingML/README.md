@@ -143,10 +143,10 @@ As soon as you execute the SQL script on the eWay-CRM server database users shou
 
 ## Troubleshooting
 
-* Error after export from eWay-CRM: **Ambigous cell mapping encountered. Possible missing paragpraph element. < p> elements are required before every < /tc>**
+* Error after export from eWay-CRM: `Ambigous cell mapping encountered. Possible missing paragpraph element. <p> elements are required before every </tc>`
 
 ![error](Images/error.png)
 
-Solution: There is probably white outer AF element, which must be corrected to pink
+Solution: There is probably white outer AF element in word template, which must be corrected to pink (see the last part of **Create template** section)
 
 ![element-before-fix](Images/white-element.png)
