@@ -161,8 +161,6 @@ namespace Wml2Ew
                 .Replace(Constants.TRANSFORMATION_VERSION_PARAMETER, version.ToString())
                 .Replace(Constants.DUPLICATE_TO_OTHER_LANGUAGES_PARAMETER, duplicateToOtherLanguages ? "1" : "0")
                 .Replace(Constants.ITEMGUID_PARAMETER, itemGuid == null ? "NULL" : $"'{itemGuid}'")
-                .Replace(Constants.LANGUAGE_CODE_LIST_SQL_SCRIPT_PLACE_HOLDER, $"'{string.Join("', '", LANGUAGES)}'")
-                .Replace(Constants.LANGUAGE_CODE_LIST_STRING_SQL_SCRIPT_PLACE_HOLDER, string.Join(", ", LANGUAGES))
                 .Replace(Constants.XSL_PARAMETER, xsl.Replace("'", "''"));
 
             File.WriteAllText(Path.ChangeExtension(xmlFileName, "sql"), sqlScript, Encoding.UTF8);
