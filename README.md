@@ -11,6 +11,6 @@ Click [here](WordprocessingML/README.md) for more information on how to create a
 
 * Text is exported to the template without line-breaks
 * Exported data cannot be used in Header or Footer of the document
-* Dynamic immages (images from eWay-CRM / QR codes) cannot be used in the template
+* Dynamic images (images from eWay-CRM / QR codes) cannot be used in the template
 * Format of numbers or dates cannot be changed
 * Calculations cannot be performed in the template
